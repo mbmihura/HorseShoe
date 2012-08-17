@@ -40,8 +40,8 @@ namespace Horseshoe.Models.Configuration
         {
             //HACK: Test Data
             StayCategoriesContext staycontext = new StayCategoriesContext();
-            staycontext.Add(new StayCategory("yegua madre"));
-            staycontext.Add(new StayCategory("madre con cria al pie"));
+            staycontext.Add(new StayCategory("yegua madre",5m));
+            staycontext.Add(new StayCategory("madre con cria al pie",10m));
             return staycontext ;
         }
     }

@@ -4,27 +4,32 @@ using System.Linq;
 using System.Text;
 using Horseshoe.Models.Owner;
 using Horseshoe.Models.Configuration;
+using Horseshoe.Exceptions;
 
 namespace Horseshoe.Models
 {
     class Horse
     {
         public string Name { get; set; }
-        bool male;
-        StayCategory StayCat { get; set; }
+        public bool Male { get; set; }
+        public StayCategory StayCategory { get; private set; }
         ICollection<OwnerShare> owners = new List<OwnerShare>();
-        ICollection<Stay> stays = new List<Stay>();
-        ICollection<Item> historyCosts = new List<Item>();
-        ICollection<Item> actualcosts = new List<Item>();
+        List<StayCategoryChange> staysCategoryHistory = new List<StayCategoryChange>();
+        public void ChangeStayCategory(StayCategoryChange stayCategoryChange)
+        {
+            if (stayCategoryChange.StayCategory.ValidateSex(Male))
+            {
+                staysCategoryHistory.Add(stayCategoryChange);
+                StayCategory = stayCategoryChange.StayCategory;
+            }
+            else {
+                throw new CategoryNotApplicableToHorseSex();
+            }
 
+        }
         public override string ToString()
         {
             return Name;
-        }
-
-        internal Configuration.StayCategory GetStayCategory()
-        {
-            return StayCat;
         }
     }
 }
