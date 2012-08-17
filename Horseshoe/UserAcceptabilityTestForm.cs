@@ -11,9 +11,9 @@ using Horseshoe.Models;
 
 namespace Horseshoe
 {
-    public partial class MainForm : Form
+    public partial class UserAcceptabilityTestForm : Form
     {
-        public MainForm()
+        public UserAcceptabilityTestForm()
         {
             InitializeComponent();
         }

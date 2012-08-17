@@ -1,6 +1,6 @@
 ﻿namespace Horseshoe
 {
-    partial class MainForm
+    partial class UserAcceptabilityTestForm
     {
         /// <summary>
         /// Variable del diseñador requerida.
