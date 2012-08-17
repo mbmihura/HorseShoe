@@ -30,9 +30,12 @@ namespace Horseshoe
             hor.DataSource = caballos;
             hor.DisplayMember = "Name";
             hor.ValueMember = null;
+
+            //dataGridView1.DataSource = l;
         }
         ItemAbstractFactory fact;
         UserInterface ui;
+        List<Item> l = new List<Item>();
         private void factory_SelectedIndexChanged(object sender, EventArgs e)
         {
             fact = (ItemAbstractFactory)factory.SelectedItem;
@@ -47,6 +50,18 @@ namespace Horseshoe
             Item i = fact.Create(ui);
             string[] row1 = { i.Type.Name, i.Description, i.Cost.ToString() };
             listView1.Items.Add(i.Horse.Name).SubItems.AddRange(row1);
+            l.Add(i);
+            //dataGridView1.Update();
+
+            object[] buffer = new object[5];
+            DataGridViewRow row = new DataGridViewRow();
+                buffer[0] = i.Horse;
+                buffer[1] = i.Type;
+                buffer[2] = i.Description;
+                buffer[3] = i.Date;
+                buffer[4] = i.Cost;
+                row.CreateCells(dataGridView1, buffer);
+                dataGridView1.Rows.Add(row);
 
         }
     }
