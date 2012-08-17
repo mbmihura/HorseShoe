@@ -40,10 +40,8 @@ namespace Horseshoe.Models.Configuration
             }
             category.Add(this);
         }
-        public string getCategory()
-        {
-            return FactoryCategory.Name;
-        }
+        public override string ToString() {return Name; }
+        public string getCategory() {return FactoryCategory.Name;}
         public virtual void ConfigureInput(UserInterface userInterface)
         {
             userInterface.Clear();
@@ -207,7 +205,7 @@ namespace Horseshoe.Models.Configuration
         }
         public override Item Create(UserInterface userInterface)
         {
-            StayCategory stayCategory = userInterface.Horse.GetStayCategory();
+            StayCategory stayCategory = userInterface.Horse.StayCategory;
             string descriptionLiteral = String.Format(DescriptionPatern,
                 userInterface.Horse,
                 Name,
