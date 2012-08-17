@@ -5,7 +5,11 @@ using System.Text;
 
 namespace Horseshoe.Models
 {
-    class Stay
+    class Invoice
     {
+        int year;
+        byte month;
+        
+        List<Item> items = new List<Item>();
     }
 }

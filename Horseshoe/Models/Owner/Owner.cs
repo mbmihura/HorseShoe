@@ -10,5 +10,8 @@ namespace Horseshoe.Models.Owner
         string lastName;
         string firstName;
         List<IBillingDeliveryMethod> billingDeliveryMethod;
+        List<Invoice> InvoicesHistory = new List<Invoice>();
     }
+
+
 }
