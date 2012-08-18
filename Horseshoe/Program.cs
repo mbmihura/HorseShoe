@@ -4,26 +4,27 @@ using System.Linq;
 using System.Windows.Forms;
 using Horseshoe.Models.Configuration;
 using Horseshoe.Views;
+using Horseshoe.Models.Persistence;
 
 namespace Horseshoe
 {
     static class Program
     {
+        public static FactoryCategoriesContext ItemCategoriesAll { get; private set; }
+        public static StayCategoriesContext StayCategoriesAll { get; private set; }
+        public static HorsesHome HorsesAll { get; private set; }
+        public static OwnersHome OwnersAll { get; private set; }
+
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
-        private static FactoryCategoriesContext itemCategories = new FactoryCategoriesContext();
-        private static StayCategoriesContext stayCategories;
-
-        public static FactoryCategoriesContext ItemCategories { get { return itemCategories; } }
-        public static StayCategoriesContext StayCategories { get { return stayCategories; } }
-
-
         [STAThread]
         static void Main()
         {
-            stayCategories = StayCategoriesContext.Load();
-            itemCategories = FactoryCategoriesContext.Load();
+            ItemCategoriesAll = FactoryCategoriesContext.LoadTestData();
+            StayCategoriesAll = StayCategoriesContext.LoadTestData();
+            HorsesAll = HorsesHome.LoadTestData();
+            OwnersAll = OwnersHome.LoadTestData();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

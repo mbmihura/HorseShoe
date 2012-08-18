@@ -50,6 +50,10 @@
     <Compile Include="Exceptions\ItemCategoryNameAlreadyUsed.cs" />
     <Compile Include="Exceptions\StayCategoryNameAlreadyUsedException.cs" />
     <Compile Include="Exceptions\StayCategoryWithNoCostPriceException.cs" />
+    <Compile Include="Exceptions\SharePercentageOutOfRangeException.cs" />
+    <Compile Include="Models\Persistence\HorsesHome.cs" />
+    <Compile Include="Exceptions\SharesPercentageSumNot100Exception.cs" />
+    <Compile Include="Models\Persistence\OwnersList.cs" />
     <Compile Include="UserAcceptabilityTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,10 +61,10 @@
       <DependentUpon>UserAcceptabilityTestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\CategoryNotApplicableToHorseSex.cs" />
-    <Compile Include="Models\Configuration\FactoryCategoriesContext.cs" />
+    <Compile Include="Models\Persistence\FactoryCategoriesContext.cs" />
     <Compile Include="Models\Configuration\FactoryCategory.cs" />
     <Compile Include="Models\Configuration\ItemFactories.cs" />
-    <Compile Include="Models\Configuration\StayCategoriesContext.cs" />
+    <Compile Include="Models\Persistence\StayCategoriesContext.cs" />
     <Compile Include="Models\Configuration\StayCategory.cs" />
     <Compile Include="Models\Horse.cs" />
     <Compile Include="Models\Invoice.cs" />

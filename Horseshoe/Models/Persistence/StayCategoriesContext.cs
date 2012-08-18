@@ -36,7 +36,7 @@ namespace Horseshoe.Models.Configuration
             return stayCategories.GetEnumerator();
         }
         
-        public static StayCategoriesContext Load()
+        public static StayCategoriesContext LoadTestData()
         {
             //HACK: Test Data
             StayCategoriesContext staycontext = new StayCategoriesContext();

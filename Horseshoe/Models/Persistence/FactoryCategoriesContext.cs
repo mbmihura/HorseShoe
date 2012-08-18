@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using Horseshoe.Exceptions;
 using System.Collections;
+using Horseshoe.Models.Configuration;
 
-namespace Horseshoe.Models.Configuration
+namespace Horseshoe.Models.Persistence
 {
     class FactoryCategoriesContext : IEnumerable
     {
@@ -40,7 +41,7 @@ namespace Horseshoe.Models.Configuration
         {
             return itemCategories.GetEnumerator();
         }
-        public static FactoryCategoriesContext Load()
+        public static FactoryCategoriesContext LoadTestData()
         {
             //HACK: Test Data
             FactoryCategoriesContext textContext = new FactoryCategoriesContext();
@@ -51,7 +52,7 @@ namespace Horseshoe.Models.Configuration
             new PricePerDayFactory(category, "Tratamiento de prueba con fecha", 100, true,5).DescriptionPatern = "Tratamiento de prueba el dia {2}";
             Dictionary<StayCategory, decimal> prices = new Dictionary<StayCategory, decimal>();
             int i = 5;
-            foreach (StayCategory st in Program.StayCategories)
+            foreach (StayCategory st in Program.StayCategoriesAll)
             {
                 prices.Add(st,i);
                 i += 14;
