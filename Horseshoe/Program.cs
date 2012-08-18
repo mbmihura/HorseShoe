@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Horseshoe.Models.Configuration;
+using Horseshoe.Views;
 
 namespace Horseshoe
 {
@@ -26,7 +27,7 @@ namespace Horseshoe
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserAcceptabilityTestForm());
+            Application.Run(new MainForm());
         }
     }
 }

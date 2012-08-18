@@ -50,11 +50,11 @@
     <Compile Include="Exceptions\ItemCategoryNameAlreadyUsed.cs" />
     <Compile Include="Exceptions\StayCategoryNameAlreadyUsedException.cs" />
     <Compile Include="Exceptions\StayCategoryWithNoCostPriceException.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="UserAcceptabilityTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="UserAcceptabilityTestForm.Designer.cs">
+      <DependentUpon>UserAcceptabilityTestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\CategoryNotApplicableToHorseSex.cs" />
     <Compile Include="Models\Configuration\FactoryCategoriesContext.cs" />
@@ -73,8 +73,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserInterface.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <Compile Include="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserAcceptabilityTestForm.resx">
+      <DependentUpon>UserAcceptabilityTestForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,7 +90,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Horseshoe.Models.Item.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -101,7 +112,15 @@
       <Name>HorseshoeControls</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\GreenTriangleLeftBig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenTriangleUpSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackButtonWhiteTemplate.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
