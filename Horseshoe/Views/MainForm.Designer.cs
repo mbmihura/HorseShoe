@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.optPeriod_flp = new System.Windows.Forms.FlowLayoutPanel();
@@ -68,12 +67,6 @@
             this.ilDgvItemList_dgv = new System.Windows.Forms.DataGridView();
             this.ilDelete_pic = new System.Windows.Forms.PictureBox();
             this.ilBoxType_cmb = new System.Windows.Forms.ComboBox();
-            this.ilDgvDate_txtcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ilDgvHorse_txtcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ilDgvType_txtcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ilDgvDescription_txtcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ilDgvCost_txtcol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ilItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.optPeriod_flp.SuspendLayout();
             this.titlesContainer_flp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_pic)).BeginInit();
@@ -86,7 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ilBoxAdd_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ilDgvItemList_dgv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ilDelete_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ilItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // optPeriod_flp
@@ -511,19 +503,11 @@
             this.ilDgvItemList_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ilDgvItemList_dgv.AutoGenerateColumns = false;
             this.ilDgvItemList_dgv.BackgroundColor = System.Drawing.Color.White;
             this.ilDgvItemList_dgv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ilDgvItemList_dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.ilDgvItemList_dgv.ColumnHeadersHeight = 25;
             this.ilDgvItemList_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.ilDgvItemList_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ilDgvDate_txtcol,
-            this.ilDgvHorse_txtcol,
-            this.ilDgvType_txtcol,
-            this.ilDgvDescription_txtcol,
-            this.ilDgvCost_txtcol});
-            this.ilDgvItemList_dgv.DataSource = this.ilItemBindingSource;
             this.ilDgvItemList_dgv.GridColor = System.Drawing.Color.White;
             this.ilDgvItemList_dgv.Location = new System.Drawing.Point(3, 36);
             this.ilDgvItemList_dgv.Name = "ilDgvItemList_dgv";
@@ -554,42 +538,6 @@
             this.ilBoxType_cmb.Name = "ilBoxType_cmb";
             this.ilBoxType_cmb.Size = new System.Drawing.Size(224, 21);
             this.ilBoxType_cmb.TabIndex = 18;
-            // 
-            // ilDgvDate_txtcol
-            // 
-            this.ilDgvDate_txtcol.DataPropertyName = "Date";
-            this.ilDgvDate_txtcol.HeaderText = "Date";
-            this.ilDgvDate_txtcol.Name = "ilDgvDate_txtcol";
-            // 
-            // ilDgvHorse_txtcol
-            // 
-            this.ilDgvHorse_txtcol.DataPropertyName = "Horse";
-            this.ilDgvHorse_txtcol.HeaderText = "Horse";
-            this.ilDgvHorse_txtcol.Name = "ilDgvHorse_txtcol";
-            this.ilDgvHorse_txtcol.ReadOnly = true;
-            // 
-            // ilDgvType_txtcol
-            // 
-            this.ilDgvType_txtcol.DataPropertyName = "Type";
-            this.ilDgvType_txtcol.HeaderText = "Type";
-            this.ilDgvType_txtcol.Name = "ilDgvType_txtcol";
-            this.ilDgvType_txtcol.ReadOnly = true;
-            // 
-            // ilDgvDescription_txtcol
-            // 
-            this.ilDgvDescription_txtcol.DataPropertyName = "Description";
-            this.ilDgvDescription_txtcol.HeaderText = "Description";
-            this.ilDgvDescription_txtcol.Name = "ilDgvDescription_txtcol";
-            // 
-            // ilDgvCost_txtcol
-            // 
-            this.ilDgvCost_txtcol.DataPropertyName = "Cost";
-            this.ilDgvCost_txtcol.HeaderText = "Cost";
-            this.ilDgvCost_txtcol.Name = "ilDgvCost_txtcol";
-            // 
-            // ilItemBindingSource
-            // 
-            this.ilItemBindingSource.DataSource = typeof(Horseshoe.Models.Item);
             // 
             // MainForm
             // 
@@ -623,7 +571,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ilBoxAdd_pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ilDgvItemList_dgv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ilDelete_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ilItemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -654,7 +601,6 @@
         private System.Windows.Forms.Label optMainActualPeriod2_lbl;
         private System.Windows.Forms.Label optMainActualPeriod1_lbl;
         private System.Windows.Forms.Panel il_pnl;
-        private System.Windows.Forms.BindingSource ilItemBindingSource;
         private System.Windows.Forms.Panel ilBox_pnl;
         private System.Windows.Forms.Button ilBoxCancel_btn;
         private System.Windows.Forms.Button ilBoxSave_btn;
@@ -666,11 +612,6 @@
         private System.Windows.Forms.ComboBox ilBoxHorse_cmb;
         private System.Windows.Forms.FlowLayoutPanel ilBoxContainer_flp;
         private System.Windows.Forms.DataGridView ilDgvItemList_dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ilDgvDate_txtcol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ilDgvHorse_txtcol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ilDgvType_txtcol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ilDgvDescription_txtcol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ilDgvCost_txtcol;
         private System.Windows.Forms.PictureBox ilDelete_pic;
         private System.Windows.Forms.ComboBox ilBoxType_cmb;
     }
