@@ -9,6 +9,7 @@ namespace Horseshoe.Models
     {
         int year;
         byte month;
+        DateTime finishDate;
         
         List<Item> items = new List<Item>();
     }
