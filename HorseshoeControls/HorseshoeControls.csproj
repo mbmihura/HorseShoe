@@ -43,47 +43,84 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DateInput.cs">
+    <Compile Include="Input\DateInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DateInput.designer.cs">
+    <Compile Include="Input\DateInput.designer.cs">
       <DependentUpon>DateInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="DropListInput.cs">
+    <Compile Include="Input\DropListInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="DropListInput.designer.cs">
+    <Compile Include="Input\DropListInput.designer.cs">
       <DependentUpon>DropListInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="NumberInput.cs">
+    <Compile Include="Input\NumberInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="NumberInput.designer.cs">
+    <Compile Include="Input\NumberInput.designer.cs">
       <DependentUpon>NumberInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="TextInput.cs">
+    <Compile Include="Input\TextInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TextInput.designer.cs">
+    <Compile Include="Input\TextInput.designer.cs">
       <DependentUpon>TextInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewsControls\GroupInputView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewsControls\GroupInputView.Designer.cs">
+      <DependentUpon>GroupInputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewsControls\ItemsInputView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewsControls\ItemsInputView.Designer.cs">
+      <DependentUpon>ItemsInputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewsControls\StayChangeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ViewsControls\StayChangeView.Designer.cs">
+      <DependentUpon>StayChangeView.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DateInput.resx">
+    <EmbeddedResource Include="Input\DateInput.resx">
       <DependentUpon>DateInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DropListInput.resx">
+    <EmbeddedResource Include="Input\DropListInput.resx">
       <DependentUpon>DropListInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NumberInput.resx">
+    <EmbeddedResource Include="Input\NumberInput.resx">
       <DependentUpon>NumberInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TextInput.resx">
+    <EmbeddedResource Include="Input\TextInput.resx">
       <DependentUpon>TextInput.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewsControls\GroupInputView.resx">
+      <DependentUpon>GroupInputView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewsControls\ItemsInputView.resx">
+      <DependentUpon>ItemsInputView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewsControls\StayChangeView.resx">
+      <DependentUpon>StayChangeView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
