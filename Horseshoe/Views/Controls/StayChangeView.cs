@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace HorseshoeControls.ViewsControls
+namespace Horseshoe.Views.Controls
 {
     public partial class StayChangeView : UserControl
     {

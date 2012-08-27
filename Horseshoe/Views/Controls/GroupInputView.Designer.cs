@@ -1,4 +1,4 @@
-﻿namespace HorseshoeControls.ViewsControls
+﻿namespace Horseshoe.Views.Controls
 {
     partial class GroupInputView
     {

@@ -28,7 +28,7 @@ namespace Horseshoe
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UserAcceptabilityTestForm());
+            Application.Run(new PeriodForm());
         }
     }
 }

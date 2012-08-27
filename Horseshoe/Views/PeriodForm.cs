@@ -15,6 +15,13 @@ namespace Horseshoe.Views
         public PeriodForm()
         {
             InitializeComponent();
+            itemsInputView.TypeDataSource = Program.ItemCategoriesAll.getAllFactories();
+            //itemsInputView.DisplayMember = "Name";
+            //itemsInputView.ValueMember = null;
+
+            itemsInputView.HorseDataSource = Program.HorsesAll;
+            //itemsInputView.DisplayMember = "Name";
+            //itemsInputView.ValueMember = null;
         }
 
         private void optPeriodHorses_lbl_Click(object sender, EventArgs e)

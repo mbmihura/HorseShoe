@@ -1,4 +1,4 @@
-﻿namespace HorseshoeControls.ViewsControls
+﻿namespace Horseshoe.Views.Controls
 {
     partial class StayChangeView
     {
@@ -302,7 +302,7 @@
         private System.Windows.Forms.Label boxDExplanation_lbl;
         private System.Windows.Forms.Label boxAType_lbl;
         private System.Windows.Forms.Label boxAHorses_lbl;
-        private Input.DateInput dateInput;
+        private HorseshoeControls.Input.DateInput dateInput;
         private System.Windows.Forms.ComboBox boxAType_cmb;
         private System.Windows.Forms.ComboBox boxAHorse_cmb;
         private System.Windows.Forms.Button boxACancel_btn;

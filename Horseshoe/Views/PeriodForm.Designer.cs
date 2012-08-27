@@ -40,7 +40,7 @@
             this.titleBar_lbl = new System.Windows.Forms.Label();
             this.titleOption_lbl = new System.Windows.Forms.Label();
             this.back_pic = new System.Windows.Forms.PictureBox();
-            this.itemsInputView1 = new HorseshoeControls.ViewsControls.ItemsInputView();
+            this.itemsInputView = new Horseshoe.Views.Controls.ItemsInputView();
             this.optPeriod_flp.SuspendLayout();
             this.titlesContainer_flp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.back_pic)).BeginInit();
@@ -198,15 +198,18 @@
             this.back_pic.TabIndex = 27;
             this.back_pic.TabStop = false;
             // 
-            // itemsInputView1
+            // itemsInputView
             // 
-            this.itemsInputView1.BackColor = System.Drawing.Color.White;
-            this.itemsInputView1.HorseDataSource = null;
-            this.itemsInputView1.Location = new System.Drawing.Point(230, 14);
-            this.itemsInputView1.Name = "itemsInputView1";
-            this.itemsInputView1.Size = new System.Drawing.Size(806, 457);
-            this.itemsInputView1.TabIndex = 33;
-            this.itemsInputView1.TypeDataSource = null;
+            this.itemsInputView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.itemsInputView.BackColor = System.Drawing.Color.White;
+            this.itemsInputView.HorseDataSource = null;
+            this.itemsInputView.Location = new System.Drawing.Point(221, 14);
+            this.itemsInputView.Name = "itemsInputView";
+            this.itemsInputView.Size = new System.Drawing.Size(815, 460);
+            this.itemsInputView.TabIndex = 33;
+            this.itemsInputView.TypeDataSource = null;
             // 
             // PeriodForm
             // 
@@ -217,7 +220,7 @@
             this.Controls.Add(this.titlesContainer_flp);
             this.Controls.Add(this.back_pic);
             this.Controls.Add(this.optPeriod_flp);
-            this.Controls.Add(this.itemsInputView1);
+            this.Controls.Add(this.itemsInputView);
             this.Name = "PeriodForm";
             this.Text = "MainForm";
             this.optPeriod_flp.ResumeLayout(false);
@@ -242,6 +245,6 @@
         private System.Windows.Forms.PictureBox back_pic;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label optBill_lbl;
-        private HorseshoeControls.ViewsControls.ItemsInputView itemsInputView1;
+        private Controls.ItemsInputView itemsInputView;
     }
 }

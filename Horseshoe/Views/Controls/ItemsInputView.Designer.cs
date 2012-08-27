@@ -1,4 +1,4 @@
-﻿namespace HorseshoeControls.ViewsControls
+﻿namespace Horseshoe.Views.Controls
 {
     partial class ItemsInputView
     {
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemsInputView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.delete_pic = new System.Windows.Forms.PictureBox();
@@ -46,6 +47,12 @@
             this.delete_lbl = new System.Windows.Forms.Label();
             this.add_lbl = new System.Windows.Forms.Label();
             this.ItemList_dgv = new System.Windows.Forms.DataGridView();
+            this.dgvContextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dgvHorse_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvType_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDescription_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDate_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCost_clm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.delete_pic)).BeginInit();
             this.box_pnl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.boxLeftTriangle_pic)).BeginInit();
@@ -121,7 +128,7 @@
             this.boxAType_cmb.Name = "boxAType_cmb";
             this.boxAType_cmb.Size = new System.Drawing.Size(224, 21);
             this.boxAType_cmb.TabIndex = 18;
-            
+            this.boxAType_cmb.SelectedIndexChanged += new System.EventHandler(this.boxAType_cmb_SelectedIndexChanged);
             // 
             // boxAHorse_cmb
             // 
@@ -152,6 +159,7 @@
             this.boxACancel_btn.TabIndex = 13;
             this.boxACancel_btn.Text = "Cancelar";
             this.boxACancel_btn.UseVisualStyleBackColor = true;
+            this.boxACancel_btn.Click += new System.EventHandler(this.boxACancel_btn_Click);
             // 
             // boxASave_btn
             // 
@@ -162,6 +170,7 @@
             this.boxASave_btn.TabIndex = 10;
             this.boxASave_btn.Text = "Guardar";
             this.boxASave_btn.UseVisualStyleBackColor = true;
+            this.boxASave_btn.Click += new System.EventHandler(this.boxASave_btn_Click);
             // 
             // boxTitle_lbl
             // 
@@ -239,9 +248,10 @@
             // 
             // ItemList_dgv
             // 
+            this.ItemList_dgv.AllowUserToAddRows = false;
             this.ItemList_dgv.AllowUserToOrderColumns = true;
             this.ItemList_dgv.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
             this.ItemList_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ItemList_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -251,14 +261,58 @@
             this.ItemList_dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.ItemList_dgv.ColumnHeadersHeight = 25;
             this.ItemList_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.ItemList_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvHorse_clm,
+            this.dgvType_clm,
+            this.dgvDescription_clm,
+            this.dgvDate_clm,
+            this.dgvCost_clm});
             this.ItemList_dgv.GridColor = System.Drawing.Color.White;
             this.ItemList_dgv.Location = new System.Drawing.Point(3, 36);
             this.ItemList_dgv.Name = "ItemList_dgv";
             this.ItemList_dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.ItemList_dgv.RowHeadersVisible = false;
-            this.ItemList_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.ItemList_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ItemList_dgv.Size = new System.Drawing.Size(528, 421);
             this.ItemList_dgv.TabIndex = 36;
+            this.ItemList_dgv.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataGridView_MouseClick);
+            // 
+            // dgvContextMenu
+            // 
+            this.dgvContextMenu.Name = "dgvContextMenu";
+            this.dgvContextMenu.ShowCheckMargin = true;
+            this.dgvContextMenu.ShowImageMargin = false;
+            this.dgvContextMenu.Size = new System.Drawing.Size(61, 4);
+            // 
+            // dgvHorse_clm
+            // 
+            this.dgvHorse_clm.HeaderText = "Caballlo";
+            this.dgvHorse_clm.Name = "dgvHorse_clm";
+            this.dgvHorse_clm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dgvType_clm
+            // 
+            this.dgvType_clm.HeaderText = "Tipo";
+            this.dgvType_clm.Name = "dgvType_clm";
+            this.dgvType_clm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dgvDescription_clm
+            // 
+            this.dgvDescription_clm.HeaderText = "Description";
+            this.dgvDescription_clm.Name = "dgvDescription_clm";
+            this.dgvDescription_clm.Width = 200;
+            // 
+            // dgvDate_clm
+            // 
+            this.dgvDate_clm.HeaderText = "Fecha";
+            this.dgvDate_clm.Name = "dgvDate_clm";
+            this.dgvDate_clm.Visible = false;
+            // 
+            // dgvCost_clm
+            // 
+            this.dgvCost_clm.HeaderText = "Costo";
+            this.dgvCost_clm.Name = "dgvCost_clm";
+            this.dgvCost_clm.Width = 50;
             // 
             // ItemsInputView
             // 
@@ -303,5 +357,11 @@
         private System.Windows.Forms.Label delete_lbl;
         private System.Windows.Forms.Label add_lbl;
         private System.Windows.Forms.DataGridView ItemList_dgv;
+        private System.Windows.Forms.ContextMenuStrip dgvContextMenu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvHorse_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvType_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDescription_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvDate_clm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvCost_clm;
     }
 }

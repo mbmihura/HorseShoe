@@ -51,11 +51,29 @@
     <Compile Include="Exceptions\StayCategoryNameAlreadyUsedException.cs" />
     <Compile Include="Exceptions\StayCategoryWithNoCostPriceException.cs" />
     <Compile Include="Exceptions\SharePercentageOutOfRangeException.cs" />
-    <Compile Include="Views\Billing.cs">
+    <Compile Include="Views\BillingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Billing.Designer.cs">
-      <DependentUpon>Billing.cs</DependentUpon>
+    <Compile Include="Views\BillingForm.Designer.cs">
+      <DependentUpon>BillingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\GroupInputView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\GroupInputView.Designer.cs">
+      <DependentUpon>GroupInputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\ItemsInputView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\ItemsInputView.Designer.cs">
+      <DependentUpon>ItemsInputView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Controls\StayChangeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Controls\StayChangeView.Designer.cs">
+      <DependentUpon>StayChangeView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\MainForm.cs">
       <SubType>Form</SubType>
@@ -101,6 +119,15 @@
     <Compile Include="Views\PeriodForm.Designer.cs">
       <DependentUpon>PeriodForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Controls\GroupInputView.resx">
+      <DependentUpon>GroupInputView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\ItemsInputView.resx">
+      <DependentUpon>ItemsInputView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Controls\StayChangeView.resx">
+      <DependentUpon>StayChangeView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

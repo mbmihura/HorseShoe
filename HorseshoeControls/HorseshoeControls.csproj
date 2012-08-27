@@ -73,24 +73,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="ViewsControls\GroupInputView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ViewsControls\GroupInputView.Designer.cs">
-      <DependentUpon>GroupInputView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewsControls\ItemsInputView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ViewsControls\ItemsInputView.Designer.cs">
-      <DependentUpon>ItemsInputView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewsControls\StayChangeView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ViewsControls\StayChangeView.Designer.cs">
-      <DependentUpon>StayChangeView.cs</DependentUpon>
-    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -109,15 +91,6 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewsControls\GroupInputView.resx">
-      <DependentUpon>GroupInputView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewsControls\ItemsInputView.resx">
-      <DependentUpon>ItemsInputView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewsControls\StayChangeView.resx">
-      <DependentUpon>StayChangeView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
