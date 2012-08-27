@@ -16,7 +16,8 @@ namespace Horseshoe.Models.Configuration
             get { return name; }
             set
             {
-                if (Program.ItemCategoriesAll.getAllFactories().Exists(s => s.Name == value))
+                Horseshoe.Models.Persistence.FactoryCategoriesContext factoriesContext = Program.ItemCategoriesAll;
+                if (factoriesContext != null && factoriesContext.getAllFactories().Exists(s => s.Name == value))
                     throw new FactoryNameAlreadyUsedException();
                 else
                     name = value; 
