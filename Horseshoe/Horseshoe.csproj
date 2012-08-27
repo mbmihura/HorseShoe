@@ -51,6 +51,18 @@
     <Compile Include="Exceptions\StayCategoryNameAlreadyUsedException.cs" />
     <Compile Include="Exceptions\StayCategoryWithNoCostPriceException.cs" />
     <Compile Include="Exceptions\SharePercentageOutOfRangeException.cs" />
+    <Compile Include="Views\Billing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Billing.Designer.cs">
+      <DependentUpon>Billing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Persistence\HorsesHome.cs" />
     <Compile Include="Exceptions\SharesPercentageSumNot100Exception.cs" />
     <Compile Include="Models\Persistence\OwnersList.cs" />
@@ -76,13 +88,22 @@
     <Compile Include="Models\StayCategoryChange.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserInterface.cs" />
-    <Compile Include="Views\MainForm.cs">
+    <Compile Include="Views\UserInterface.cs" />
+    <Compile Include="Views\HomeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Views\HomeForm.Designer.cs">
+      <DependentUpon>HomeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PeriodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PeriodForm.Designer.cs">
+      <DependentUpon>PeriodForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserAcceptabilityTestForm.resx">
       <DependentUpon>UserAcceptabilityTestForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,8 +117,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\HomeForm.resx">
+      <DependentUpon>HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PeriodForm.resx">
+      <DependentUpon>PeriodForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Horseshoe.Models.Item.datasource" />
     <None Include="Properties\Settings.settings">

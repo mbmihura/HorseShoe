@@ -24,7 +24,7 @@ namespace Horseshoe.Views
 
         private void optBill_lbl_Click(object sender, EventArgs e)
         {
-            new Billing().ShowDialog();
+            new BillingForm().ShowDialog();
         }
 
     }

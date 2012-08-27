@@ -21,14 +21,14 @@ namespace Horseshoe
         [STAThread]
         static void Main()
         {
-            ItemCategoriesAll = FactoryCategoriesContext.LoadTestData();
             StayCategoriesAll = StayCategoriesContext.LoadTestData();
+            ItemCategoriesAll = FactoryCategoriesContext.LoadTestData();
             HorsesAll = HorsesHome.LoadTestData();
-            OwnersAll = OwnersHome.LoadTestData();
+            //OwnersAll = OwnersHome.LoadTestData();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new UserAcceptabilityTestForm());
         }
     }
 }
