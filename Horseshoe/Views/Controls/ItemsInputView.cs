@@ -127,6 +127,14 @@ namespace Horseshoe.Views.Controls
             }
         }
 
+        private void boxDConfirm_btn_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow selection in ItemList_dgv.SelectedRows)
+            {
+                ItemList_dgv.Rows.Remove(selection);
+            }
+        }
+
       
     }
 }

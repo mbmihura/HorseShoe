@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemsInputView));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.delete_pic = new System.Windows.Forms.PictureBox();
             this.box_pnl = new System.Windows.Forms.Panel();
             this.boxDConfirm_btn = new System.Windows.Forms.Button();
@@ -103,6 +103,7 @@
             this.boxDConfirm_btn.Text = "CONFIRMAR";
             this.boxDConfirm_btn.UseVisualStyleBackColor = true;
             this.boxDConfirm_btn.Visible = false;
+            this.boxDConfirm_btn.Click += new System.EventHandler(this.boxDConfirm_btn_Click);
             // 
             // boxDCancel_lnk
             // 
@@ -251,8 +252,8 @@
             this.ItemList_dgv.AllowUserToAddRows = false;
             this.ItemList_dgv.AllowUserToOrderColumns = true;
             this.ItemList_dgv.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.ItemList_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.AliceBlue;
+            this.ItemList_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ItemList_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
