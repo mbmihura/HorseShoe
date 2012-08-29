@@ -6,10 +6,12 @@ using Horseshoe.Exceptions;
 
 namespace Horseshoe.Models.Owner
 {
-    class OwnerShare
+    struct OwnerShare
     {
+        Owner owner;
         float percentage;
-        public Owner Owner { get; private set; }
+        
+        public Owner Owner { get { return owner; } private set { owner = value; } }
         public float Percentage
         {
             get { return percentage; }
@@ -23,6 +25,10 @@ namespace Horseshoe.Models.Owner
         }
         public OwnerShare(Owner owner, float  percentage)
         {
+            //requiered initialization
+            this.owner = new Owner();
+            this.percentage = 0;
+            //Applies Property logic
             Owner = owner;
             Percentage = percentage;
         }
