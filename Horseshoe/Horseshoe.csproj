@@ -51,6 +51,7 @@
     <Compile Include="Exceptions\StayCategoryNameAlreadyUsedException.cs" />
     <Compile Include="Exceptions\StayCategoryWithNoCostPriceException.cs" />
     <Compile Include="Exceptions\SharePercentageOutOfRangeException.cs" />
+    <Compile Include="Exceptions\AlreadyExistsStayCategoryChangeThatDayException.cs" />
     <Compile Include="Views\BillingForm.cs">
       <SubType>Form</SubType>
     </Compile>

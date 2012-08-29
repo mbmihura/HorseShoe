@@ -10,9 +10,9 @@ namespace Horseshoe.Models.Persistence
         public static HorsesHome LoadTestData()
         {
             int i = 0;
-            Configuration.StayCategory[] starray = new Configuration.StayCategory[Program.StayCategoriesAll.Count];
+            StayCategoryChange[] starray = new StayCategoryChange[Program.StayCategoriesAll.Count];
             foreach (Configuration.StayCategory sc in Program.StayCategoriesAll)
-                starray[i++] = sc;
+                starray[i++] = new StayCategoryChange(DateTime.Today.AddDays(i),sc);
 
 
             //HACK: Test Data

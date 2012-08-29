@@ -206,7 +206,7 @@ namespace Horseshoe.Models.Configuration
         }
         public override Item Create(UserInterface userInterface)
         {
-            StayCategory stayCategory = userInterface.Horse.StayCategory;
+            StayCategory stayCategory = userInterface.Horse.ActualStayCategory;
             string descriptionLiteral = String.Format(DescriptionPatern,
                 userInterface.Horse,
                 Name,

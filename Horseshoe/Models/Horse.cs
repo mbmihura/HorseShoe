@@ -12,44 +12,63 @@ namespace Horseshoe.Models
     {
         public string Name { get; set; }
         public bool Male { get; set; }
-        public StayCategory StayCategory { get; private set; }
         ICollection<OwnerShare> owners = new List<OwnerShare>();
         List<StayCategoryChange> staysCategoryHistory = new List<StayCategoryChange>();
 
-        public Horse(string name, bool isMale, StayCategory initialStayCategory, ICollection<OwnerShare> ownersList)
+        public ICollection<OwnerShare> Owners
         {
-            //Initialize a Horse...
+            get { return owners; }
+            set
+            {
+                //Checks that shares add to a 100%.
+                if (value.Aggregate(0f, (sum, share) => sum + share.Percentage) != 100)
+                    throw new SharesPercentageSumNot100Exception();
+                owners = value;
+            }
+
+        }
+        public List<StayCategoryChange> StaysCategoryHistory
+        {
+            get { return staysCategoryHistory; }
+        }
+        public StayCategory ActualStayCategory 
+        {
+            //returns the stayCatagory of the newest stayChange(fisrt) of the list.
+            get {return staysCategoryHistory.First().StayCategory;}
+        }
+        
+
+        public Horse(string name, bool isMale, StayCategoryChange initialStayCategoryChange, ICollection<OwnerShare> ownerShareList)
+        {
+            //Initialize a Horse, applying business rules.
             Name = name;
             Male = isMale;
-            StayCategory = initialStayCategory;
-            //Chacks that shares add to a 100%.
-            //TODO: refactor so user can edit share n owners.
-            if (ownersList.Aggregate(0f, (sum, i) => sum + i.Percentage) != 100)
-            {
-                throw new SharesPercentageSumNot100Exception();
-            }
-            else
-            {
-                owners = ownersList;
-            }
+            AddStayCategoryChange(initialStayCategoryChange);
+            Owners = ownerShareList;
         }
             
-        public void ChangeStayCategory(StayCategoryChange stayCategoryChange)
+        public void AddStayCategoryChange(StayCategoryChange stayCategoryChange)
         {
-            //Change StayCategory (actual) for the new one, and adds to historical records.
+            //Validate that category is aplicable to horse sex.
             if (stayCategoryChange.StayCategory.ValidateSex(Male))
             {
-                staysCategoryHistory.Add(stayCategoryChange);
-                StayCategory = stayCategoryChange.StayCategory;
+                //Checks that there is only on stayCatChange per day
+                if (staysCategoryHistory.Exists(s => s.Day.Date == stayCategoryChange.Day.Date))
+                {
+                    throw new AlreadyExistsStayCategoryChangeThatDayException();
+                }
+                //Keeps stayHistory sorted by Day (desc). Finds the first occurrence of a older stay...
+                int position = staysCategoryHistory.FindIndex(s => s.Day.Date < stayCategoryChange.Day.Date);
+                //If there is no occurence, element is insert fisrt.
+                if (position == -1)
+                    position = 0; 
+                staysCategoryHistory.Insert(position,stayCategoryChange);
             }
             else {
                 throw new CategoryNotApplicableToHorseSex();
             }
 
         }
-        public override string ToString()
-        {
-            return Name;
-        }
+        public override string ToString() {return Name;}
     }
 }
