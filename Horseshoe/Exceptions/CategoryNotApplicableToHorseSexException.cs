@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Horseshoe.Exceptions
 {
-    class CategoryNotApplicableToHorseSex : Exception
+    class CategoryNotApplicableToHorseSexException : Exception
     {
     }
 }

@@ -47,7 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\FactoryNameAlreadyUsedException.cs" />
-    <Compile Include="Exceptions\ItemCategoryNameAlreadyUsed.cs" />
+    <Compile Include="Exceptions\ItemCategoryNameAlreadyUsedException.cs" />
     <Compile Include="Exceptions\StayCategoryNameAlreadyUsedException.cs" />
     <Compile Include="Exceptions\StayCategoryWithNoCostPriceException.cs" />
     <Compile Include="Exceptions\SharePercentageOutOfRangeException.cs" />
@@ -91,7 +91,7 @@
     <Compile Include="UserAcceptabilityTestForm.Designer.cs">
       <DependentUpon>UserAcceptabilityTestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Exceptions\CategoryNotApplicableToHorseSex.cs" />
+    <Compile Include="Exceptions\CategoryNotApplicableToHorseSexException.cs" />
     <Compile Include="Models\Persistence\FactoryCategoriesContext.cs" />
     <Compile Include="Models\Configuration\FactoryCategory.cs" />
     <Compile Include="Models\Configuration\ItemFactories.cs" />

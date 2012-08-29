@@ -65,7 +65,7 @@ namespace Horseshoe.Models
                 staysCategoryHistory.Insert(position,stayCategoryChange);
             }
             else {
-                throw new CategoryNotApplicableToHorseSex();
+                throw new CategoryNotApplicableToHorseSexException();
             }
 
         }
