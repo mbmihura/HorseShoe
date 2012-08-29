@@ -12,11 +12,14 @@ namespace Horseshoe.Models.Configuration
         public bool ValidForMale { get; set; }
         public bool ValidForFemale { get; set; }
 
-        public StayCategory(string name, decimal pricePerDay)
+        public StayCategory(string name, decimal pricePerDay, bool validForMale = true,bool validForFemale = true)
         {
             this.Name = name;
+            this.PricePerDay = pricePerDay;
+            this.ValidForMale = validForMale;
+            this.ValidForFemale = validForFemale;
         }
-        public Item Create()
+        public StayCategoryChange Create()
         {
             throw new NotImplementedException();
         }
