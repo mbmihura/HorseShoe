@@ -52,6 +52,7 @@
     <Compile Include="Exceptions\StayCategoryWithNoCostPriceException.cs" />
     <Compile Include="Exceptions\SharePercentageOutOfRangeException.cs" />
     <Compile Include="Exceptions\AlreadyExistsStayCategoryChangeThatDayException.cs" />
+    <Compile Include="Models\PeriodContext.cs" />
     <Compile Include="Views\BillingForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,7 +85,7 @@
     </Compile>
     <Compile Include="Models\Persistence\HorsesHome.cs" />
     <Compile Include="Exceptions\SharesPercentageSumNot100Exception.cs" />
-    <Compile Include="Models\Persistence\OwnersList.cs" />
+    <Compile Include="Models\Persistence\OwnersHome.cs" />
     <Compile Include="UserAcceptabilityTestForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,10 +93,10 @@
       <DependentUpon>UserAcceptabilityTestForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Exceptions\CategoryNotApplicableToHorseSexException.cs" />
-    <Compile Include="Models\Persistence\FactoryCategoriesContext.cs" />
+    <Compile Include="Models\Persistence\FactoryCategoriesHome.cs" />
     <Compile Include="Models\Configuration\FactoryCategory.cs" />
     <Compile Include="Models\Configuration\ItemFactories.cs" />
-    <Compile Include="Models\Persistence\StayCategoriesContext.cs" />
+    <Compile Include="Models\Persistence\StayCategoriesHome.cs" />
     <Compile Include="Models\Configuration\StayCategory.cs" />
     <Compile Include="Models\Horse.cs" />
     <Compile Include="Models\Invoice.cs" />

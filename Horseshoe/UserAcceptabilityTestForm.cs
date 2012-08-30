@@ -20,11 +20,11 @@ namespace Horseshoe
         private void MainForm_Load(object sender, EventArgs e)
         {
             //Setup data binding
-            factory.DataSource = Program.ItemCategoriesAll.getAllFactories();
+            factory.DataSource = Program.Context.ItemCategoriesAll.getAllFactories();
             factory.DisplayMember = "Name";
             factory.ValueMember = null;
 
-            hor.DataSource = Program.HorsesAll;
+            hor.DataSource = Program.Context.HorsesAll;
             hor.DisplayMember = "Name";
             hor.ValueMember = null;
 

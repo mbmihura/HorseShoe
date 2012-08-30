@@ -8,7 +8,7 @@ using Horseshoe.Models.Configuration;
 
 namespace Horseshoe.Models.Persistence
 {
-    class FactoryCategoriesContext : IEnumerable
+    class FactoryCategoriesHome : IEnumerable
     {
         List<FactoryCategory> itemCategories = new List<FactoryCategory>();
         public List<ItemAbstractFactory> getAllFactories()
@@ -41,10 +41,10 @@ namespace Horseshoe.Models.Persistence
         {
             return itemCategories.GetEnumerator();
         }
-        public static FactoryCategoriesContext LoadTestData()
+        public static FactoryCategoriesHome LoadTestData()
         {
             //HACK: Test Data
-            FactoryCategoriesContext textContext = new FactoryCategoriesContext();
+            FactoryCategoriesHome textContext = new FactoryCategoriesHome();
             FactoryCategory category = textContext.Create("todas");
             new IndependentPriceFactory(category, "Viaje", false,"servicio",500).DescriptionPatern = "{0} viaje a {3}";
             new FixedPriceFactory(category, "Rx", 55.0m, false).DescriptionPatern = "Rx a {0}";
@@ -52,7 +52,7 @@ namespace Horseshoe.Models.Persistence
             new PricePerDayFactory(category, "Tratamiento de prueba con fecha", 100, true,5).DescriptionPatern = "Tratamiento de prueba el dia {2}";
             Dictionary<StayCategory, decimal> prices = new Dictionary<StayCategory, decimal>();
             int i = 5;
-            foreach (StayCategory st in Program.StayCategoriesAll)
+            foreach (StayCategory st in Program.Context.StayCategoriesAll)
             {
                 prices.Add(st,i);
                 i += 14;

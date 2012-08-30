@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using Horseshoe.Exceptions;
 using System.Collections;
+using Horseshoe.Models.Configuration;
 
-namespace Horseshoe.Models.Configuration
+namespace Horseshoe.Models.Persistence
 {
-    class StayCategoriesContext : IEnumerable
+    class StayCategoriesHome : List<StayCategory>
     {
         List<StayCategory> stayCategories = new List<StayCategory>();
 
@@ -36,10 +37,10 @@ namespace Horseshoe.Models.Configuration
             return stayCategories.GetEnumerator();
         }
         
-        public static StayCategoriesContext LoadTestData()
+        public static StayCategoriesHome LoadTestData()
         {
             //HACK: Test Data
-            StayCategoriesContext staycontext = new StayCategoriesContext();
+            StayCategoriesHome staycontext = new StayCategoriesHome();
             staycontext.Add(new StayCategory("yegua madre",5m));
             staycontext.Add(new StayCategory("madre con cria al pie",10m));
             return staycontext ;

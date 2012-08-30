@@ -16,7 +16,7 @@ namespace Horseshoe.Models.Configuration
             get { return name; }
             set
             {
-                Horseshoe.Models.Persistence.FactoryCategoriesContext factoriesContext = Program.ItemCategoriesAll;
+                Horseshoe.Models.Persistence.FactoryCategoriesHome factoriesContext = Program.Context.ItemCategoriesAll;
                 if (factoriesContext != null && factoriesContext.getAllFactories().Exists(s => s.Name == value))
                     throw new FactoryNameAlreadyUsedException();
                 else
@@ -187,10 +187,10 @@ namespace Horseshoe.Models.Configuration
         public PricePerCategoryFactory(FactoryCategory category, string name, Dictionary<StayCategory, decimal> pricesDicctionary, bool usePreciseDate)
             : base(category, name, usePreciseDate)
         {
-            price = new Dictionary<StayCategory,decimal>(Program.StayCategoriesAll.Count);
+            price = new Dictionary<StayCategory,decimal>(Program.Context.StayCategoriesAll.Count);
             try
             {
-                foreach (StayCategory sc in Program.StayCategoriesAll)
+                foreach (StayCategory sc in Program.Context.StayCategoriesAll)
                 {
                     price.Add(sc, pricesDicctionary[sc]);
                 }
