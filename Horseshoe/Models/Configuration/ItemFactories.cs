@@ -16,8 +16,8 @@ namespace Horseshoe.Models.Configuration
             get { return name; }
             set
             {
-                Horseshoe.Models.Persistence.FactoryCategoriesHome factoriesContext = Program.Context.ItemCategoriesAll;
-                if (factoriesContext != null && factoriesContext.getAllFactories().Exists(s => s.Name == value))
+                Horseshoe.Models.PeriodContext context = Program.Context;
+                if (context != null && context.ItemFactories.getAllFactories().Exists(s => s.Name == value))
                     throw new FactoryNameAlreadyUsedException();
                 else
                     name = value; 
@@ -27,10 +27,11 @@ namespace Horseshoe.Models.Configuration
         public string DescriptionPatern { get; set; }
         protected DateType dateType { get; set; }
         //Methods
-        public ItemAbstractFactory(FactoryCategory category, string name, bool usePreciseDate)
+        public ItemAbstractFactory(FactoryCategory category, string name, string descriptionPatern, bool usePreciseDate)
         {
             Name = name;
             FactoryCategory = category;
+            DescriptionPatern = descriptionPatern;
             if (usePreciseDate)
             {
                 dateType = new UserSetDate();
@@ -97,8 +98,8 @@ namespace Horseshoe.Models.Configuration
         public string DefaultExplanation { get; set; }
         public decimal DefaultCost {get; set;}
 
-        public IndependentPriceFactory(FactoryCategory category, string name, bool usePreciseDate, string defaultExplanation, decimal defaultCost)
-            : base(category, name, usePreciseDate) 
+        public IndependentPriceFactory(FactoryCategory category, string name, string descriptionPatern, bool usePreciseDate, string defaultExplanation, decimal defaultCost)
+            : base(category, name, descriptionPatern, usePreciseDate) 
         {
             DefaultExplanation = defaultExplanation;
             DefaultCost = defaultCost;
@@ -122,13 +123,19 @@ namespace Horseshoe.Models.Configuration
             userInterface.Clear();
             return product;
         }
+
+        public static IndependentPriceFactory CreateFactoryIn(Configuration.FactoryCategory category, string name, string descriptionPatern, bool usePreciseDate, string defaultExplanation, decimal defaultCost)
+        {
+            //TODO:Refactor
+            return new IndependentPriceFactory(category, name, descriptionPatern, usePreciseDate, defaultExplanation, defaultCost);
+        }
     }
     class FixedPriceFactory:ItemAbstractFactory
     {
         public decimal Price { get; set; }
 
-        public FixedPriceFactory(FactoryCategory category, string name, decimal price, bool usePreciseDate)
-            : base(category, name, usePreciseDate)
+        public FixedPriceFactory(FactoryCategory category, string name, string descriptionPatern, decimal price, bool usePreciseDate)
+            : base(category, name, descriptionPatern, usePreciseDate)
         {
             Price = price;
         }
@@ -147,6 +154,11 @@ namespace Horseshoe.Models.Configuration
             userInterface.Clear();
             return product;
         }
+
+        public static FixedPriceFactory CreateFactoryIn(Configuration.FactoryCategory category, string name, string descriptionPatern, decimal price, bool usePreciseDate)
+        {
+            return new FixedPriceFactory(category, name, descriptionPatern, price, usePreciseDate);
+        }
     }
     class PricePerDayFactory:ItemAbstractFactory
     {
@@ -154,8 +166,8 @@ namespace Horseshoe.Models.Configuration
         public decimal PricePerDay { get; set; }
         public int DefaultDays { get; set; }
 
-        public PricePerDayFactory(FactoryCategory category, string name, decimal pricePerDay, bool usePreciseDate, int defaultDays)
-            : base(category, name, usePreciseDate)
+        public PricePerDayFactory(FactoryCategory category, string name, string descriptionPatern, decimal pricePerDay, bool usePreciseDate, int defaultDays)
+            : base(category, name, descriptionPatern, usePreciseDate)
         {
             PricePerDay = pricePerDay;
             DefaultDays = defaultDays;
@@ -179,18 +191,23 @@ namespace Horseshoe.Models.Configuration
             userInterface.Clear();
             return product;
         }
+
+        internal static PricePerDayFactory CreateFactoryIn(Configuration.FactoryCategory category, string name, string descriptionPatern, decimal pricePerDay, bool usePreciseDate, int defaultDays)
+        {
+            return new PricePerDayFactory(category, name,  descriptionPatern, pricePerDay, usePreciseDate, defaultDays);
+        }
     }
     class PricePerCategoryFactory:ItemAbstractFactory
     {
         Dictionary<StayCategory, decimal> price;
 
-        public PricePerCategoryFactory(FactoryCategory category, string name, Dictionary<StayCategory, decimal> pricesDicctionary, bool usePreciseDate)
-            : base(category, name, usePreciseDate)
+        public PricePerCategoryFactory(FactoryCategory category, string name, string descriptionPatern, Dictionary<StayCategory, decimal> pricesDicctionary, bool usePreciseDate)
+            : base(category, name,  descriptionPatern, usePreciseDate)
         {
-            price = new Dictionary<StayCategory,decimal>(Program.Context.StayCategoriesAll.Count);
+            price = new Dictionary<StayCategory,decimal>(Program.Context.StayCategories.Count);
             try
             {
-                foreach (StayCategory sc in Program.Context.StayCategoriesAll)
+                foreach (StayCategory sc in Program.Context.StayCategories)
                 {
                     price.Add(sc, pricesDicctionary[sc]);
                 }
@@ -216,6 +233,11 @@ namespace Horseshoe.Models.Configuration
             Item product = new Item(userInterface.Horse, this, descriptionLiteral, Cost, dateType.Date);
             userInterface.Clear();
             return product;
+        }
+
+        public static PricePerCategoryFactory CreateFactoryIn(Configuration.FactoryCategory category, string name, string descriptionPatern, Dictionary<StayCategory, decimal> pricesDicctionary, bool usePreciseDate)
+        {
+            return new PricePerCategoryFactory(category, name, descriptionPatern, pricesDicctionary, usePreciseDate);
         }
     }
     //class PricePerCategoryPerDayFactory : ItemAbstractFactory

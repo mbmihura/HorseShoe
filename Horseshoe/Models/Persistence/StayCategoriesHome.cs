@@ -36,14 +36,5 @@ namespace Horseshoe.Models.Persistence
         {
             return stayCategories.GetEnumerator();
         }
-        
-        public static StayCategoriesHome LoadTestData()
-        {
-            //HACK: Test Data
-            StayCategoriesHome staycontext = new StayCategoriesHome();
-            staycontext.Add(new StayCategory("yegua madre",5m));
-            staycontext.Add(new StayCategory("madre con cria al pie",10m));
-            return staycontext ;
-        }
-    }
+     }
 }
