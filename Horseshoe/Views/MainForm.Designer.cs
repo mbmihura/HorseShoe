@@ -268,7 +268,6 @@
             this.il_pnl.Name = "il_pnl";
             this.il_pnl.Size = new System.Drawing.Size(803, 477);
             this.il_pnl.TabIndex = 40;
-            this.il_pnl.Paint += new System.Windows.Forms.PaintEventHandler(this.il_pnl_Paint);
             // 
             // back_pic
             // 
@@ -590,7 +589,6 @@
             this.label17.TabIndex = 21;
             this.label17.Text = "  Octubre";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label15
             // 
@@ -1459,7 +1457,6 @@
             this.Controls.Add(this.optMain_pnl);
             this.Name = "MainForm";
             this.Text = "MainForm";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.titlesContainer_flp.ResumeLayout(false);
             this.titlesContainer_flp.PerformLayout();
             this.il_pnl.ResumeLayout(false);

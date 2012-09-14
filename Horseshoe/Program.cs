@@ -16,13 +16,11 @@ namespace Horseshoe
         /// Punto de entrada principal para la aplicación.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Context = PeriodContext.LoadTestData();
-            //OwnersAll = OwnersHome.LoadTestData();
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Context = args.Length > 0 ? PeriodContext.LoadFromFile(args[0]) : PeriodContext.LoadTestData() /*TODO: loadLastKwonPeriodContext*/;
             Application.Run(new PeriodForm());
         }
     }
