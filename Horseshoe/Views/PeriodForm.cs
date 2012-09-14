@@ -15,11 +15,11 @@ namespace Horseshoe.Views
         public PeriodForm()
         {
             InitializeComponent();
-            itemsInputView.TypeDataSource = Program.ItemCategoriesAll.getAllFactories();
+            itemsInputView.TypeDataSource = Program.Context.ItemFactories;
             //itemsInputView.DisplayMember = "Name";
             //itemsInputView.ValueMember = null;
 
-            itemsInputView.HorseDataSource = Program.HorsesAll;
+            itemsInputView.HorseDataSource = Program.Context.Horses;
             //itemsInputView.DisplayMember = "Name";
             //itemsInputView.ValueMember = null;
         }
