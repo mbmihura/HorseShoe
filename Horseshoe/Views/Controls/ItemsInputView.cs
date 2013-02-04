@@ -35,7 +35,6 @@ namespace Horseshoe.Views.Controls
                 dgvContextMenu.Items.Add(menuItem);
             }
         }
-          
 
         ItemAbstractFactory fact;
         UserInterface ui;       

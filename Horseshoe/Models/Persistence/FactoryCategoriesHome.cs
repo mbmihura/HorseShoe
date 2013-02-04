@@ -8,19 +8,19 @@ using Horseshoe.Models.Configuration;
 
 namespace Horseshoe.Models.Persistence
 {
-    class FactoryCategoriesHome : IEnumerable
+    class FactoryGroupsHome : IEnumerable
     {
-        List<FactoryCategory> itemCategories = new List<FactoryCategory>();
+        List<FactoryGroup> itemCategories = new List<FactoryGroup>();
         public List<ItemAbstractFactory> getAllFactories()
         {
             List<ItemAbstractFactory> all = new List<ItemAbstractFactory>();
-            foreach (FactoryCategory category in itemCategories)
+            foreach (FactoryGroup category in itemCategories)
             {
                 all.AddRange(category);
             }
             return all;
         }
-        public FactoryCategory CreateCategory(string name)
+        public FactoryGroup CreateGroup(string name)
         {
             if (itemCategories.Exists(c => c.Name == name))
             {
@@ -28,7 +28,7 @@ namespace Horseshoe.Models.Persistence
             }
             else
             {
-                FactoryCategory category = new FactoryCategory(name);
+                FactoryGroup category = new FactoryGroup(name);
                 itemCategories.Add(category);
                 return category;
             }

@@ -20,7 +20,11 @@ namespace Horseshoe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Context = args.Length > 0 ? PeriodContext.LoadFromFile(args[0]) : PeriodContext.LoadTestData() /*TODO: loadLastKwonPeriodContext*/;
+            Context = new PeriodContext();
+            if (args.Length > 0)
+                Context.LoadFromFile(args[0]);
+            else
+                Context.LoadTestData()/*TODO: loadLastKwonPeriodContext*/;
             Application.Run(new PeriodForm());
         }
     }

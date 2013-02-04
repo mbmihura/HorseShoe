@@ -210,6 +210,7 @@
             this.itemsInputView.Size = new System.Drawing.Size(815, 460);
             this.itemsInputView.TabIndex = 33;
             this.itemsInputView.TypeDataSource = null;
+            this.itemsInputView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             // 
             // PeriodForm
             // 
@@ -223,6 +224,7 @@
             this.Controls.Add(this.itemsInputView);
             this.Name = "PeriodForm";
             this.Text = "MainForm";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.optPeriod_flp.ResumeLayout(false);
             this.titlesContainer_flp.ResumeLayout(false);
             this.titlesContainer_flp.PerformLayout();

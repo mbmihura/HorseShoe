@@ -55,6 +55,12 @@
     <Compile Include="Input\DropListInput.designer.cs">
       <DependentUpon>DropListInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="Input\FastList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Input\FastList.Designer.cs">
+      <DependentUpon>FastList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Input\NumberInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Input\DropListInput.resx">
       <DependentUpon>DropListInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Input\FastList.resx">
+      <DependentUpon>FastList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Input\NumberInput.resx">
       <DependentUpon>NumberInput.cs</DependentUpon>

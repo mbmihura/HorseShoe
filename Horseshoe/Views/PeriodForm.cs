@@ -15,13 +15,8 @@ namespace Horseshoe.Views
         public PeriodForm()
         {
             InitializeComponent();
-            itemsInputView.TypeDataSource = Program.Context.ItemFactories;
-            //itemsInputView.DisplayMember = "Name";
-            //itemsInputView.ValueMember = null;
-
+            itemsInputView.TypeDataSource = Program.Context.FactoriesGroups.getAllFactories();
             itemsInputView.HorseDataSource = Program.Context.Horses;
-            //itemsInputView.DisplayMember = "Name";
-            //itemsInputView.ValueMember = null;
         }
 
         private void optPeriodHorses_lbl_Click(object sender, EventArgs e)
@@ -32,6 +27,27 @@ namespace Horseshoe.Views
         private void optBill_lbl_Click(object sender, EventArgs e)
         {
             new BillingForm().ShowDialog();
+        }
+
+        void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            MessageBox.Show(e.KeyChar.ToString());
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                MessageBox.Show("Form.KeyPress: '" +
+                    e.KeyChar.ToString() + "' pressed.");
+
+                switch (e.KeyChar)
+                {
+                    case (char)49:
+                    case (char)52:
+                    case (char)55:
+                        MessageBox.Show("Form.KeyPress: '" +
+                            e.KeyChar.ToString() + "' consumed.");
+                        e.Handled = true;
+                        break;
+                }
+            }
         }
 
     }

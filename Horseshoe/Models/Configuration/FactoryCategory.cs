@@ -5,11 +5,11 @@ using System.Text;
 
 namespace Horseshoe.Models.Configuration
 {
-    class FactoryCategory : List<ItemAbstractFactory>
+    class FactoryGroup : List<ItemAbstractFactory>
     {
         public string Name { get; set; }
 
-        public FactoryCategory(string name):base()
+        public FactoryGroup(string name):base()
         {
             this.Name = name;
         }
