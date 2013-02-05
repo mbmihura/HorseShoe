@@ -121,6 +121,15 @@
   <data name="BackButtonWhiteTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackButtonWhiteTemplate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BlueTriangleDownBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GreenTriangleDownBig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlueTriangleDownSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlueTriangleDownSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BlueTriangleUpSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BlueTriangleUpSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="GreenTriangleLeftBig" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\GreenTriangleLeftBig.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

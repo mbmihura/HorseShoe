@@ -117,21 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="delete_pic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA4AAAAHCAIAAAC3JetOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAA9SURBVChTY/iPAX7/+QFEmOIMaEJARa8/3gUiTNUoSuHq
-        sKpGKEVTh6kaqhSrOjTVIKV41CGrZiCoDq4aALT3GP6E9IcrAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="add_pic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAA4AAAAHCAIAAAC3JetOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADrwAAA68AZW8ckkAAAA9SURBVChTY/iPAX7/+QFEmOIMaEJARa8/3gUiTNUoSuHq
-        sKpGKEVTh6kaqhSrOjTVIKV41CGrZiCoDq4aALT3GP6E9IcrAAAAAElFTkSuQmCC
-</value>
-  </data>
   <metadata name="dgvHorse_clm.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -150,4 +135,19 @@
   <metadata name="dgvContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="delete_pic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA4AAAAHCAIAAAC3JetOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAERJREFUKFOFykEKACAIRFHvf8dO0KqdYFDGSJlFDX8z8Kgdk8qaHbdIFeWStFNv
+        dLqrXjQ45LXRq0NTD/pwCJq+DknlDrT3GP56yXmAAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="add_pic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA4AAAAHCAIAAAC3JetOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAERJREFUKFOFykEKACAIRFHvf8dO0KqdYFDGSJlFDX8z8Kgdk8qaHbdIFeWStFNv
+        dLqrXjQ45LXRq0NTD/pwCJq+DknlDrT3GP56yXmAAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

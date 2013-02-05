@@ -40,6 +40,7 @@
             this.titleBar_lbl = new System.Windows.Forms.Label();
             this.titleOption_lbl = new System.Windows.Forms.Label();
             this.back_pic = new System.Windows.Forms.PictureBox();
+            this.stayChangeView = new Horseshoe.Views.Controls.StayChangeView();
             this.itemsInputView = new Horseshoe.Views.Controls.ItemsInputView();
             this.optPeriod_flp.SuspendLayout();
             this.titlesContainer_flp.SuspendLayout();
@@ -57,9 +58,9 @@
             this.optPeriod_flp.Controls.Add(this.optPeriodGrupales_lbl);
             this.optPeriod_flp.Controls.Add(this.optBill_lbl);
             this.optPeriod_flp.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.optPeriod_flp.Location = new System.Drawing.Point(28, 50);
+            this.optPeriod_flp.Location = new System.Drawing.Point(28, 60);
             this.optPeriod_flp.Name = "optPeriod_flp";
-            this.optPeriod_flp.Size = new System.Drawing.Size(189, 421);
+            this.optPeriod_flp.Size = new System.Drawing.Size(189, 414);
             this.optPeriod_flp.TabIndex = 32;
             // 
             // label3
@@ -74,6 +75,7 @@
             this.label3.TabIndex = 17;
             this.label3.Text = "  Estadias";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label3.Click += new System.EventHandler(this.Show_StayChangeView);
             // 
             // Category2_lbl
             // 
@@ -87,6 +89,7 @@
             this.Category2_lbl.TabIndex = 13;
             this.Category2_lbl.Text = "  Tratamientos";
             this.Category2_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Category2_lbl.Click += new System.EventHandler(this.Show_ItemInputView);
             // 
             // Category1_lbl
             // 
@@ -100,6 +103,7 @@
             this.Category1_lbl.TabIndex = 14;
             this.Category1_lbl.Text = "  Analisis";
             this.Category1_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Category1_lbl.Click += new System.EventHandler(this.Show_ItemInputView);
             // 
             // Category3_lbl
             // 
@@ -113,6 +117,7 @@
             this.Category3_lbl.TabIndex = 15;
             this.Category3_lbl.Text = "  Viajes";
             this.Category3_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Category3_lbl.Click += new System.EventHandler(this.Show_ItemInputView);
             // 
             // optPeriodGrupales_lbl
             // 
@@ -146,7 +151,7 @@
             this.titlesContainer_flp.Controls.Add(this.titleHaras_lbl);
             this.titlesContainer_flp.Controls.Add(this.titleBar_lbl);
             this.titlesContainer_flp.Controls.Add(this.titleOption_lbl);
-            this.titlesContainer_flp.Location = new System.Drawing.Point(45, 9);
+            this.titlesContainer_flp.Location = new System.Drawing.Point(50, 14);
             this.titlesContainer_flp.Name = "titlesContainer_flp";
             this.titlesContainer_flp.Size = new System.Drawing.Size(351, 29);
             this.titlesContainer_flp.TabIndex = 29;
@@ -198,6 +203,19 @@
             this.back_pic.TabIndex = 27;
             this.back_pic.TabStop = false;
             // 
+            // stayChangeView
+            // 
+            this.stayChangeView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.stayChangeView.BackColor = System.Drawing.Color.White;
+            this.stayChangeView.HorseDataSource = null;
+            this.stayChangeView.Location = new System.Drawing.Point(222, 24);
+            this.stayChangeView.Name = "stayChangeView";
+            this.stayChangeView.Size = new System.Drawing.Size(802, 452);
+            this.stayChangeView.TabIndex = 33;
+            this.stayChangeView.TypeDataSource = null;
+            // 
             // itemsInputView
             // 
             this.itemsInputView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -205,10 +223,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.itemsInputView.BackColor = System.Drawing.Color.White;
             this.itemsInputView.HorseDataSource = null;
-            this.itemsInputView.Location = new System.Drawing.Point(221, 14);
+            this.itemsInputView.Location = new System.Drawing.Point(221, 24);
             this.itemsInputView.Name = "itemsInputView";
-            this.itemsInputView.Size = new System.Drawing.Size(815, 460);
-            this.itemsInputView.TabIndex = 33;
+            this.itemsInputView.Size = new System.Drawing.Size(815, 450);
+            this.itemsInputView.TabIndex = 0;
             this.itemsInputView.TypeDataSource = null;
             this.itemsInputView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             // 
@@ -219,6 +237,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1036, 488);
             this.Controls.Add(this.titlesContainer_flp);
+            this.Controls.Add(this.stayChangeView);
             this.Controls.Add(this.back_pic);
             this.Controls.Add(this.optPeriod_flp);
             this.Controls.Add(this.itemsInputView);
@@ -248,5 +267,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label optBill_lbl;
         private Controls.ItemsInputView itemsInputView;
+        private Controls.StayChangeView stayChangeView;
     }
 }

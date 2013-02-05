@@ -15,8 +15,12 @@ namespace Horseshoe.Views
         public PeriodForm()
         {
             InitializeComponent();
-            itemsInputView.TypeDataSource = Program.Context.FactoriesGroups.getAllFactories();
-            itemsInputView.HorseDataSource = Program.Context.Horses;
+            var horses = Program.Context.Horses;
+            var types = Program.Context.FactoriesGroups.getAllFactories();
+            itemsInputView.TypeDataSource = types;
+            itemsInputView.HorseDataSource = horses;
+            stayChangeView.TypeDataSource = types;
+            stayChangeView.HorseDataSource = horses;
         }
 
         private void optPeriodHorses_lbl_Click(object sender, EventArgs e)
@@ -48,6 +52,18 @@ namespace Horseshoe.Views
                         break;
                 }
             }
+        }
+
+        private void Show_StayChangeView(object sender, EventArgs e)
+        {
+            stayChangeView.Show();
+            itemsInputView.Hide();
+        }
+
+        private void Show_ItemInputView(object sender, EventArgs e)
+        {
+            stayChangeView.Hide();
+            itemsInputView.Show();
         }
 
     }

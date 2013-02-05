@@ -68,7 +68,8 @@
             0,
             0,
             0});
-            this.day_nud.ValueChanged += new System.EventHandler(this.day_nud_ValueChanged);
+            this.day_nud.Enter += new System.EventHandler(this.day_nud_Enter);
+            this.day_nud.Leave += new System.EventHandler(this.day_nud_ValueChanged);
             // 
             // month_nud
             // 
@@ -91,7 +92,8 @@
             0,
             0,
             0});
-            this.month_nud.ValueChanged += new System.EventHandler(this.month_nud_ValueChanged);
+            this.month_nud.Enter += new System.EventHandler(this.month_nud_Enter);
+            this.month_nud.Leave += new System.EventHandler(this.month_nud_ValueChanged);
             // 
             // year_nud
             // 
@@ -114,7 +116,8 @@
             0,
             0,
             0});
-            this.year_nud.ValueChanged += new System.EventHandler(this.year_nud_ValueChanged);
+            this.year_nud.Enter += new System.EventHandler(this.year_nud_Enter);
+            this.year_nud.Leave += new System.EventHandler(this.year_nud_ValueChanged);
             // 
             // input_mcal
             // 
@@ -124,6 +127,7 @@
             this.input_mcal.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.input_mcal.Name = "input_mcal";
             this.input_mcal.TabIndex = 4;
+            this.input_mcal.TabStop = false;
             this.input_mcal.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.input_mcal_DateChanged);
             // 
             // DateInput
@@ -144,6 +148,8 @@
             this.PerformLayout();
 
         }
+
+    
 
         #endregion
 

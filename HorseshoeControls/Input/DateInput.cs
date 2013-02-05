@@ -33,17 +33,35 @@ namespace HorseshoeControls.Input
 
         private void day_nud_ValueChanged(object sender, EventArgs e)
         {
-            input_mcal.SelectionStart = new DateTime(Convert.ToInt32(year_nud.Value), Convert.ToInt32(month_nud.Value), Convert.ToInt32(day_nud.Value));
+            try
+            {
+                SetDateInCalendarControl();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                int month = Convert.ToInt32(month_nud.Value);
+                int year = Convert.ToInt32(year_nud.Value);
+                MessageBox.Show(String.Format("El dia ingresado tiene que estar entre 1 y {0} para {1}.", DateTime.DaysInMonth(year, month), new DateTime(year, month, 1).ToString("MMMM")), "Dia Invalido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                day_nud.Focus();
+            }
+
         }
 
-        private void month_nud_ValueChanged(object sender, EventArgs e)
+        private void SetDateInCalendarControl()
         {
-            input_mcal.SelectionStart = new DateTime(Convert.ToInt32(year_nud.Value), Convert.ToInt32(month_nud.Value), Convert.ToInt32(day_nud.Value));
+            int day = Convert.ToInt32(day_nud.Value);
+            int month = Convert.ToInt32(month_nud.Value);
+            int year = Convert.ToInt32(year_nud.Value);
+            input_mcal.SelectionStart = new DateTime(year, month, day);
+        }
+        private void year_nud_ValueChanged(object sender, System.EventArgs e)
+        {
+            SetDateInCalendarControl();
         }
 
-        private void year_nud_ValueChanged(object sender, EventArgs e)
+        private void month_nud_ValueChanged(object sender, System.EventArgs e)
         {
-            input_mcal.SelectionStart = new DateTime(Convert.ToInt32(year_nud.Value), Convert.ToInt32(month_nud.Value), Convert.ToInt32(day_nud.Value));
+            SetDateInCalendarControl();
         }
 
         private void input_mcal_DateChanged(object sender, DateRangeEventArgs e)
@@ -51,6 +69,21 @@ namespace HorseshoeControls.Input
             day_nud.Value = input_mcal.SelectionStart.Day;
             month_nud.Value = input_mcal.SelectionStart.Month;
             year_nud.Value = input_mcal.SelectionStart.Year;
+        }
+
+        private void day_nud_Enter(object sender, EventArgs e)
+        {
+            day_nud.Select(0, day_nud.Value.ToString().Length);
+        }
+
+        private void month_nud_Enter(object sender, EventArgs e)
+        {
+            month_nud.Select(0, month_nud.Value.ToString().Length);
+        }
+
+        private void year_nud_Enter(object sender, EventArgs e)
+        {
+            year_nud.Select(0, year_nud.Value.ToString().Length);
         }
     }
 }

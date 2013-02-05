@@ -17,9 +17,15 @@ namespace Horseshoe.Views.Controls
         public StayChangeView()
         {
             InitializeComponent();
-            addControls = new Control[6] { boxAHorse_cmb, boxAType_cmb, dateInput, add_pic, boxASave_btn, boxACancel_btn };
-            delControls = new Control[4] { boxDExplanation_lbl, boxDConfirm_btn, boxDCancel_lnk, delete_pic };
-
+            addControls = new Control[8] { boxAHorse_cmb, boxAType_cmb, dateInput, add_pic, boxASave_btn, boxACancel_btn, boxAHorses_lbl, boxAType_lbl };
+            delControls = new Control[3] { boxDExplanation_lbl, boxDConfirm_btn, delete_pic };
+            ShowMode(false);
+            boxAHorse_cmb.Focus();
+        }
+        public void Show()
+        {
+            base.Show();
+            boxAHorse_cmb.Focus();
         }
         public object HorseDataSource
         {
@@ -41,6 +47,10 @@ namespace Horseshoe.Views.Controls
                 boxTitle_lbl.Text = "Eliminar Estadia";
                 delete_lbl.ForeColor = Color.FromArgb(102, 102, 102);
                 Array.ForEach(delControls, c => c.Show()); //shows deletion controls
+                boxLeftTriangle_pic.Top -= 75;
+                box_pnl.Height -= 75;
+                stayList_dgv.Top -= 75;
+                stayList_dgv.Height += 75;
                 //TODO: Mostrar columna eliminacion
             }
             else
@@ -51,6 +61,11 @@ namespace Horseshoe.Views.Controls
                 boxTitle_lbl.Text = "Agregar Estadia:";
                 add_lbl.ForeColor = Color.FromArgb(102, 102, 102);
                 Array.ForEach(addControls, c => c.Show()); //shows adding controls
+                box_pnl.Height = 210;
+                boxLeftTriangle_pic.Top = 267;
+                stayList_dgv.Top = 279;
+                stayList_dgv.Height -= 75;
+
             }
         }
         private void delete_lbl_Click(object sender, EventArgs e)
@@ -66,6 +81,11 @@ namespace Horseshoe.Views.Controls
         private void boxDCancel_lnk_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             ShowMode(false);
+        }
+
+        private void box_pnl_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

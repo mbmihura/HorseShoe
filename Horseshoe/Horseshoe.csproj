@@ -170,6 +170,15 @@
   <ItemGroup>
     <None Include="Resources\BackButtonWhiteTemplate.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueTriangleUpSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlueTriangleDownSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GreenTriangleDownBig.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
