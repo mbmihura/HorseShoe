@@ -25,7 +25,7 @@ namespace Horseshoe
                 Context.LoadFromFile(args[0]);
             else
                 Context.LoadTestData()/*TODO: loadLastKwonPeriodContext*/;
-            Application.Run(new PeriodForm());
+            Application.Run(new MDIForm());
         }
     }
 }

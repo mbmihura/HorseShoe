@@ -10,11 +10,12 @@ namespace Horseshoe
     class UserInterface
     {
         public ComboBox Hor { get; set; }
-        public Horse Horse { 
-            get {return ((Horse)Hor.SelectedItem);}  
+        public Horse Horse
+        {
+            get { return ((Horse)Hor.SelectedItem); }
         }
         public FlowLayoutPanel Flow { get; set; }
-        
+
 
         internal void Clear()
         {
